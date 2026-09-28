@@ -1,0 +1,31 @@
+{
+  "name": "nex-play",
+  "version": "0.1.0",
+  "private": true,
+  "description": "NEX PLAY - Modular Social Multiplayer Gaming Platform",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "build:frontend": "npm run build --prefix frontend",
+    "build:backend": "npm run build --prefix backend",
+    "build": "npm run build:frontend && npm run build:backend",
+    "test:games": "npx tsx games/tic-tac-toe/tests/engine.test.ts && npx tsx games/tic-tac-toe/tests/local.test.ts",
+    "test:backend": "npm test --prefix backend",
+    "test": "npm run test:games && npm run test:backend",
+    "tunnel:backend": "ngrok http 4000",
+    "tunnel:frontend": "ngrok http 3001"
+  },
+  "keywords": [
+    "gaming",
+    "multiplayer",
+    "turn-based",
+    "realtime",
+    "modular-games"
+  ],
+  "author": "NEX PLAY Team",
+  "license": "UNLICENSED"
+}
